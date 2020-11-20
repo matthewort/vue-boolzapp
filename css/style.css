@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+body {
+  position: relative;
+}
+
+.sfondoup {
+  height: 18vh;
+  width: 100vw;
+  background-color: #66CDAA;
+}
+
+.sfondodown {
+  height: 82vh;
+  width: 100vw;
+  background-color: #FDF5E6;
+}
+
+.squarecontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+}
+
+.square {
+  margin-top: 20px;
+  height: 1850px;
+  width: 850px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+}
