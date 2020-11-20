@@ -9,33 +9,45 @@ body {
   position: relative;
 }
 
-.sfondoup {
-  height: 18vh;
-  width: 100vw;
-  background-color: #66CDAA;
-}
 
-.sfondodown {
-  height: 82vh;
+.sfondo {
+  height: 100vh;
   width: 100vw;
-  background-color: #FDF5E6;
-  position: absolute;
+  /* background-color: #FDF5E6; */
+  background-color: #66CDAA;
 }
 
 .squarecontainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1;
-
 }
 
 .square {
   margin-top: 20px;
-  height: 1850px;
-  width: 850px;
+  height: calc(100vh - 50px);
+  width: 1500px;
   background-color: white;
-  position: absolute;
-  z-index: 1;
+}
+
+.navbarleft {
+  height: 8%;
+  width: 50%;
+  background-color: grey;
+  float: left;
+}
+
+.navbarright {
+  height: 8%;
+  width: 50%;
+  background-color: grey;
+  float: left;
+}
+
+aside {
+    background: darkblue;
+    height: 10%;
+    width: 20%;
+    color: grey;
+    float: left;
 }
