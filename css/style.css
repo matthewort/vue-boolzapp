@@ -19,6 +19,7 @@ body {
   height: 82vh;
   width: 100vw;
   background-color: #FDF5E6;
+  position: absolute;
 }
 
 .squarecontainer {
