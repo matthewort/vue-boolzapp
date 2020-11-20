@@ -35,6 +35,7 @@ body {
   width: 50%;
   background-color: grey;
   float: left;
+  border: solid 2px black;
 }
 
 .navbarright {
@@ -42,12 +43,14 @@ body {
   width: 50%;
   background-color: grey;
   float: left;
+  border: solid 2px black;
 }
 
 aside {
-    background: darkblue;
-    height: 10%;
-    width: 20%;
+    background: lightblue;
+    height: 92%;
+    width: 40%;
     color: grey;
     float: left;
+    border: solid 2px black;
 }
