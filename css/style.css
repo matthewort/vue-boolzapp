@@ -17,12 +17,14 @@ body {
   background-color: #66CDAA;
 }
 
+/* container riquadro bianco */
 .squarecontainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* riquadro bianco */
 .square {
   margin-top: 20px;
   height: calc(100vh - 50px);
@@ -30,19 +32,181 @@ body {
   background-color: white;
 }
 
-.navbarleft {
-  height: 8%;
-  width: 50%;
-  background-color: grey;
+/* BLOCCO SINISTRA */
+.blockleft {
+  height: 100%;
+  width: 35%;
+  background-color: lightblue;
   float: left;
   border: solid 2px black;
 }
 
-.navbarright {
-  height: 8%;
-  width: 50%;
-  background-color: grey;
+/* nav sinistra "nome utente" */
+.navleft {
+  height: 10%;
+  width: 100%;
+  background-color: #6495ED;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* fascia sinistra "notifiche" */
+.subleft1 {
+  height: 11%;
+  width: 100%;
+  display: flex;
+  background-color: white;
+  border: solid 2px black;
+}
+
+.blocknotifiche1 {
+  height: 100%;
+  width: 20%;
+  border: solid 2px orange;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocknotifiche2 {
+  height: 100%;
+  width: 80%;
+  border: solid 2px orange;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* fascia sinistra "input" */
+.subleft2 {
+  height: 8%;
+  width: 100%;
+  background-color: white;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subleft2 input {
+  height: 65%;
+  width: 95%;
+  font-size: 20px;
+}
+
+/* contatto "Michele" */
+.contact1 {
+  height: 11%;
+  width: 100%;
+  border: solid 2px black;
+  background-color: white;
+}
+
+/* blocchetto per l'immagine "Michele" */
+.subcontact1 {
+  height: 100%;
+  width: 20%;
+  border: solid 2px orange;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ELEMENTI IN COMUNE DA COPIARE E INCOLLARE */
+img {
+  height: 70px;
+  width: auto;
+  border-radius: 100%;
+}
+
+.date {
+  padding-top: 10px;
+}
+
+.name {
+  font-size: 22px;
+}
+
+/* blocchetto per il nome "Michele" */
+.subcontact2 {
+  height: 100%;
+  width: 50%;
+  border: solid 2px orange;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+/* blocchetto per la data "Michele" */
+.subcontact3 {
+  height: 100%;
+  width: 30%;
+  border: solid 2px orange;
+  float: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* contatto "Fabio" */
+.contact2 {
+  height: 11%;
+  width: 100%;
+  border: solid 2px black;
+  background-color: white;
+}
+
+/* contatto "Samuele" */
+.contact3 {
+  height: 11%;
+  width: 100%;
+  border: solid 2px black;
+  background-color: white;
+}
+
+/* contatto "Luisa" */
+.contact4 {
+  height: 11%;
+  width: 100%;border: solid 2px black;
+  background-color: white;
+}
+
+/* BLOCCO DESTRA */
+.blockright {
+  height: 100%;
+  width: 65%;
+  background-color: lightblue;
+  float: left;
+  border: solid 2px black;
+}
+
+.navright {
+  height: 10%;
+  width: 100%;
+  border: solid 2px black;
+  background-color: #6495ED;
+}
+
+.subright1 {
+  height: 80%;
+  width: 100%;
+  background-color: #00BFFF;
+  border: solid 2px black;
+}
+
+.subright2 {
+  height: 10%;
+  width: 100%;
+  background-color: #F0F8FF;
   border: solid 2px black;
 }
 
