@@ -1,20 +1,25 @@
-// Questa consisterà nel creare la struttura html e il layout completi,
-// che saranno pensati su ciò che abbiam visto.NOTE
+// Per oggi saremo sulla milestone2, chat differenziate:
 //
-//     ricordatevi di andare in modo ordinato e lineare;
+//     cliccando sulla chat vedo quella corrispondente;
+//     con header con dati relativi a chat attiva;
+//     relativa chat in elenco rimane selezionata
 //
-//     scrivere codice pulito e mantenibile vi salverà dal dover impazzire successivamente;
+// NOTE
 //
-//     ricordatevi che qui siamo su layout App e non page;
+//     prima di scrivere qualsiasi cosa di codice fate una bella bella pre-analisi sulla struttura dei dati;
+//     usate carta o penna o quello che volete, ma fin quando non avete definito i dati che vi servono e  come strutturarli, non potete far molto;
+//     cercate di descrivere nel mondo reale di cosa state parlando, che “materia” state trattando e definendo;
+//     poi la riportate a ciò che JS ci mette a disposizione (array, oggetti, stringhe, numeri…. etc.).
 //
-//     se non vi ricordate qualcosa su ciò che abbiam visto dell’App avete sempre l’ultima parte di video di oggi (appena lo carico);
-//
-//     quindi date una bella occhiata quando avete finito e fate del refactoring ovunque possa essere utile;
-//
-//     se proprio finite e avete ancora del tempo potete iniziare a pensare a che struttura dati potrebbe aver senso fare;
-//
-//     se anche qui per caso volete proprio iniziare ad imbastire il milestone successivo, fatelo in una sotto cartella del repo;
-//
-//     la root/cartella principale del repo avrà sempre e solo il milestone assegnato quel giorno;
-//
-//     ricordate anche di riposare, al massimo i dettagli li posso sempre aggiustare strada facendo.
+// Datejene
+var app = new Vue({
+  el:'#app',
+  data: {
+    mieClassi: 'micheleno'
+  },
+  methods: {
+    miafunzione() {
+      this.mieClassi = 'michelesi'
+    }
+  }
+});

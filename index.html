@@ -5,8 +5,11 @@
     <title></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   </head>
   <body>
+
+  <div id="app">
 
     <!-- sfondo -->
     <div class="sfondo">
@@ -57,7 +60,7 @@
           </div>
 
           <!-- contact "Michele" -->
-          <div class="contact1">
+          <div class="contact1" @click='miafunzione'>
 
             <div class="subcontact1">
               <span>
@@ -77,7 +80,7 @@
             <div class="subcontact3">
               <span class="date">20 11 2020 10:52:03</span>
             </div>
-          </div>
+          </div> <!-- chiusura contact "Michele" -->
 
           <!-- contact "Fabio" -->
           <div class="contact2">
@@ -100,7 +103,7 @@
             <div class="subcontact3">
               <span class="date">20 11 2020 10:52:03</span>
             </div>
-          </div>
+          </div> <!-- chiusura contact "Fabio" -->
 
           <!-- contat "Samuele" -->
           <div class="contact3">
@@ -123,7 +126,7 @@
             <div class="subcontact3">
               <span class="date">20 11 2020 10:52:03</span>
             </div>
-          </div>
+          </div> <!-- chiusura contact "Samuele" -->
 
           <!-- contact "Luisa" -->
           <div class="contact4">
@@ -146,18 +149,22 @@
             <div class="subcontact3">
               <span class="date">20 11 2020 10:52:03</span>
             </div>
-          </div>
+          </div> <!-- chiusura contact "Luisa" -->
 
         </div> <!-- chiusura blocco sinistra -->
 
         <!-- BLOCCO DESTRA -->
         <div class="blockright">
+
+          <!-- nav di destra in cui appare in alto chi è stato selezionato -->
           <div class="navright">
-            <div class="blocknavright1">
+
+            <!-- nav di Luisa -->
+            <!-- <div class="blocknavright1">
               <img src="img/avatar_4.jpg" alt="">
             </div>
             <div class="blocknavright2">
-              <div class="luisa">
+              <div class="nomenav">
                 Luisa
               </div>
               <div class="log">
@@ -168,36 +175,65 @@
               <i class="fas fa-search"></i>
               <i class="fas fa-paperclip"></i>
               <i class="fas fa-ellipsis-v"></i>
-            </div>
-          </div>
+            </div>  -->
+            <!-- chiusura nav di Luisa -->
+
+            <!-- nav di Michele -->
+            <div :class="mieClassi"> <!-- container nav di Michele -->
+
+              <div class="blocknavright1">
+                <img src="img/avatar_1.jpg" alt="">
+              </div>
+              <div class="blocknavright2">
+                <div class="nomenav">
+                  Michele
+                </div>
+                <div class="log">
+                  Ultimo accesso oggi alle 20 11 2020 12:01:32
+                </div>
+              </div>
+              <div class="blocknavright3">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+
+            </div> <!-- chiusura container nav di Michele -->
+
+          </div> <!-- chiusura navright -->
 
           <!-- interfaccia chat -->
           <div class="subright1">
 
-            <div class="chat1">
-              <div class="contentchat1">
+            <!-- chat di Luisa -->
+            <div class="luisachat">
 
-              </div>
-            </div>
+              <div class="chat1">
+                <div class="contentchat1">
 
-            <div class="chat2">
-              <div class="contentchat2">
+                </div>
               </div>
-            </div>
 
-            <div class="chat3">
-              <div class="contentchat3">
+              <div class="chat2">
+                <div class="contentchat2">
+                </div>
               </div>
-            </div>
 
-            <div class="chat4">
-              <div class="contentchat4">
+              <div class="chat3">
+                <div class="contentchat3">
+                </div>
               </div>
-            </div>
 
-            <div class="chat5">
-              <div class="contentchat5">
+              <div class="chat4">
+                <div class="contentchat4">
+                </div>
               </div>
+
+              <div class="chat5">
+                <div class="contentchat5">
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -222,10 +258,10 @@
     </div> <!-- chiusura container riquadro -->
 
   </div> <!-- chiusura sfondo -->
+</div> <!-- chiusura app -->
 
 
 
-
-
+  <script src="js/myscript.js"></script>
   </body>
 </html>

@@ -287,6 +287,15 @@ aside {
 }
 
 /* BLOCCO DESTRA */
+/* container nav Michele */
+.micheleno {
+  display: none;
+}
+
+.michelesi {
+  display: block;
+}
+
 .blocknavright1 {
   height: 100%;
   width: 10%;
@@ -308,7 +317,7 @@ aside {
   align-items: flex-start;
 }
 
-.luisa {
+.nomenav {
   font-size: 20px;
   font-weight: bold;
 }
