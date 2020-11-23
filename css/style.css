@@ -36,23 +36,23 @@ body {
 .blockleft {
   height: 100%;
   width: 35%;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   float: left;
-  border: solid 2px black;
+  /* border: solid 2px black; */
 }
 
 /* nav sinistra "nome utente" */
 .navleft {
   height: 10%;
   width: 100%;
-  background-color: #6495ED;
-  border: solid 2px black;
+  background-color: lightgrey;
+  /* border: solid 2px black; */
 }
 
 .blocknavleft1 {
   height: 100%;
   width: 20%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: center;
@@ -62,7 +62,7 @@ body {
 .blocknavleft2 {
   height: 100%;
   width: 50%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   font-size: 30px;
 }
@@ -79,7 +79,7 @@ body {
 .blocknavleft3 {
   height: 100%;
   width: 30%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   font-size: 30px;
   color: grey;
@@ -94,29 +94,41 @@ body {
   width: 100%;
   display: flex;
   background-color: white;
-  border: solid 2px black;
+  /* border: solid 2px black; */
 }
 
 .blocknotifiche1 {
   height: 100%;
   width: 20%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  background-color: #87CEEB;
 }
+
 
 .blocknotifiche2 {
   height: 100%;
   width: 80%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  background-color: #87CEEB;
+}
+
+.notifiche {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.desktop {
+  text-decoration: underline;
 }
 
 /* fascia sinistra "input" */
@@ -124,7 +136,7 @@ body {
   height: 8%;
   width: 100%;
   background-color: white;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,11 +148,24 @@ body {
   font-size: 20px;
 }
 
+.contact1:hover {
+  background-color: lightgrey;
+}
+.contact2:hover {
+  background-color: lightgrey;
+}
+.contact3:hover {
+  background-color: lightgrey;
+}
+.contact4:hover {
+  background-color: lightgrey;
+}
+
 /* contatto "Michele" */
 .contact1 {
   height: 11%;
   width: 100%;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   background-color: white;
 }
 
@@ -148,7 +173,7 @@ body {
 .subcontact1 {
   height: 100%;
   width: 20%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: center;
@@ -174,7 +199,7 @@ img {
 .subcontact2 {
   height: 100%;
   width: 50%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   flex-direction: column;
@@ -187,7 +212,7 @@ img {
 .subcontact3 {
   height: 100%;
   width: 30%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: flex-end;
@@ -198,7 +223,7 @@ img {
 .contact2 {
   height: 11%;
   width: 100%;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   background-color: white;
 }
 
@@ -206,14 +231,15 @@ img {
 .contact3 {
   height: 11%;
   width: 100%;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   background-color: white;
 }
 
 /* contatto "Luisa" */
 .contact4 {
   height: 11%;
-  width: 100%;border: solid 2px black;
+  width: 100%;
+  /* border: solid 2px black; */
   background-color: white;
 }
 
@@ -223,44 +249,45 @@ img {
   width: 65%;
   background-color: lightblue;
   float: left;
-  border: solid 2px black;
+  /* border: solid 2px black; */
 }
 
 .navright {
   height: 10%;
   width: 100%;
-  border: solid 2px black;
-  background-color: #6495ED;
+  /* border: solid 2px black; */
+  background-color: lightgrey;
 }
 
 .subright1 {
   height: 80%;
   width: 100%;
-  background-color: #00BFFF;
-  border: solid 2px black;
+  /* background-color: #00BFFF; */
+  background-image: url('../img/mine.jpg');
+  /* border: solid 2px black; */
 }
 
 .subright2 {
   height: 10%;
   width: 100%;
   background-color: #F0F8FF;
-  border: solid 2px black;
+  /* border: solid 2px black; */
 }
 
 aside {
-    background: lightblue;
+    /* background: white; */
     height: 92%;
     width: 40%;
     color: grey;
     float: left;
-    border: solid 2px black;
+    /* border: solid 2px black; */
 }
 
 /* BLOCCO DESTRA */
 .blocknavright1 {
   height: 100%;
   width: 10%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: center;
@@ -270,7 +297,7 @@ aside {
 .blocknavright2 {
   height: 100%;
   width: 70%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   flex-direction: column;
@@ -281,7 +308,7 @@ aside {
 .blocknavright3 {
   height: 100%;
   width: 20%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: space-around;
@@ -293,7 +320,7 @@ aside {
 .chat1 {
   height: 100px;
   width: 100%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -316,7 +343,7 @@ aside {
 .chat2 {
   height: 100px;
   width: 100%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -339,7 +366,7 @@ aside {
 .chat3 {
   height: 100px;
   width: 100%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -362,7 +389,7 @@ aside {
 .chat4 {
   height: 100px;
   width: 100%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -385,7 +412,7 @@ aside {
 .chat5 {
   height: 100px;
   width: 100%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -408,7 +435,7 @@ aside {
 .subcontentright1 {
   height: 100%;
   width: 10%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: center;
@@ -419,7 +446,7 @@ aside {
 .subcontentright2 {
   height: 100%;
   width: 80%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: center;
@@ -430,7 +457,7 @@ aside {
 .subcontentright3 {
   height: 100%;
   width: 10%;
-  border: solid 2px orange;
+  /* border: solid 2px orange; */
   float: left;
   display: flex;
   justify-content: center;
