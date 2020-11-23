@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </head>
+  <body>
+
+  <div id="app">
+
+    <!-- sfondo -->
+    <div class="sfondo">
+
+    <!-- container riquadro -->
+    <div class="squarecontainer">
+      <!-- riquadro bianco -->
+      <div class="square">
+
+        <!-- BLOCCO SINISTRA -->
+        <div class="blockleft">
+
+          <!-- nome utente -->
+          <div class="navleft">
+            <div class="blocknavleft1">
+              <img src="img/avatar_io.jpg" alt="">
+            </div>
+            <div class="blocknavleft2">
+              <div class="user">
+                Nome Utente
+              </div>
+            </div>
+            <div class="blocknavleft3">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+
+          <!-- notifiche -->
+          <div class="subleft1">
+            <div class="blocknotifiche1">
+              <i class="fas fa-bell-slash"></i>
+            </div>
+            <div class="blocknotifiche2">
+              <div class="notifiche">
+                Ricevi notifiche di nuovi messaggi
+              </div>
+              <div class="desktop">
+                Attiva notifiche desktop
+              </div>
+            </div>
+          </div>
+
+          <!-- input -->
+          <div class="subleft2">
+            <input placeholder="Cerca o inizia una nuova chat">
+          </div>
+
+          <!-- contact "Michele" -->
+          <div class="contact1" @click='miafunzione'>
+            <div class="subcontact1">
+              <span>
+                <img src="img/avatar_1.jpg" alt="">
+              </span>
+            </div>
+
+            <div class="subcontact2">
+              <div class="name">
+                Michele
+              </div>
+              <div class="text">
+                ok ...
+              </div>
+            </div>
+
+            <div class="subcontact3">
+              <span class="date">20 11 2020 10:52:03</span>
+            </div>
+          </div> <!-- chiusura contact "Michele" -->
+
+          <!-- contact "Fabio" -->
+          <div class="contact2">
+
+            <div class="subcontact1">
+              <span>
+                <img src="img/avatar_2.jpg" alt="">
+              </span>
+            </div>
+
+            <div class="subcontact2">
+              <div class="name">
+                Fabio
+              </div>
+              <div class="text">
+                ok ...
+              </div>
+            </div>
+
+            <div class="subcontact3">
+              <span class="date">20 11 2020 10:52:03</span>
+            </div>
+          </div> <!-- chiusura contact "Fabio" -->
+
+          <!-- contat "Samuele" -->
+          <div class="contact3">
+
+            <div class="subcontact1">
+              <span>
+                <img src="img/avatar_3.jpg" alt="">
+              </span>
+            </div>
+
+            <div class="subcontact2">
+              <div class="name">
+                Samuele
+              </div>
+              <div class="text">
+                ok ...
+              </div>
+            </div>
+
+            <div class="subcontact3">
+              <span class="date">20 11 2020 10:52:03</span>
+            </div>
+          </div> <!-- chiusura contact "Samuele" -->
+
+          <!-- contact "Luisa" -->
+          <div class="contact4">
+
+            <div class="subcontact1">
+              <span>
+                <img src="img/avatar_4.jpg" alt="">
+              </span>
+            </div>
+
+            <div class="subcontact2">
+              <div class="name">
+                Luisa
+              </div>
+              <div class="text">
+                ok ...
+              </div>
+            </div>
+
+            <div class="subcontact3">
+              <span class="date">20 11 2020 10:52:03</span>
+            </div>
+          </div> <!-- chiusura contact "Luisa" -->
+
+        </div> <!-- chiusura blocco sinistra -->
+
+        <!-- BLOCCO DESTRA -->
+        <div class="blockright">
+
+          <!-- nav di destra in cui appare in alto chi è stato selezionato -->
+          <div class="navright">
+
+            <!-- navbar/header -->
+            <div class="blocknavright1">
+              <img src="img/avatar_4.jpg" alt="">
+            </div>
+            <div class="blocknavright2">
+              <div class="nomenav">
+                Luisa
+              </div>
+              <div class="log">
+                Ultimo accesso oggi alle 20 11 2020 12:01:32
+              </div>
+            </div>
+            <div class="blocknavright3">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <!-- chiusura nav di Luisa -->
+
+
+          </div> <!-- chiusura navright -->
+
+          <!-- interfaccia chat -->
+          <div class="subright1">
+
+            <!-- chat dell'utente -->
+            <div class="userchat">
+
+              <div class="chat1">
+                <div class="contentchat1">
+
+                </div>
+              </div>
+
+              <div class="chat2">
+                <div class="contentchat2">
+
+                </div>
+              </div>
+
+              <div class="chat3">
+                <div class="contentchat3">
+                </div>
+              </div>
+
+              <div class="chat4">
+                <div class="contentchat4">
+                </div>
+              </div>
+
+              <div class="chat5">
+                <div class="contentchat5">
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- NAV IN BASSO -->
+          <!-- interfaccia input in basso -->
+          <div class="subright2">
+            <div class="subcontentright1">
+              <i class="far fa-smile"></i>
+            </div>
+            <div class="subcontentright2">
+              <input id="write" placeholder="Scrivi un messaggio">
+            </div>
+            <div class="subcontentright3">
+              <i class="fas fa-microphone"></i>
+            </div>
+          </div>
+        </div> <!-- chiusura blocco destra -->
+
+
+      </div> <!-- chiusura riquadro bianco -->
+    </div> <!-- chiusura container riquadro -->
+
+  </div> <!-- chiusura sfondo -->
+</div> <!-- chiusura app -->
+
+
+
+  <script src="js/myscript.js"></script>
+  </body>
+</html>
