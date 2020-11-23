@@ -12,14 +12,84 @@
 //     poi la riportate a ciò che JS ci mette a disposizione (array, oggetti, stringhe, numeri…. etc.).
 //
 // Datejene
+
+// var app = new Vue({
+//   el:'#app',
+//   data: {
+//     mieClassi: 'micheleno'
+//   },
+//   methods: {
+//     miafunzione() {
+//       this.mieClassi = 'michelesi'
+//     }
+//   }
+// });
+
 var app = new Vue({
   el:'#app',
   data: {
-    mieClassi: 'micheleno'
-  },
-  methods: {
-    miafunzione() {
-      this.mieClassi = 'michelesi'
-    }
-  }
+    chatindex: 0, // perché scriviamo questo?
+    contatti: [
+      {
+        nome: 'Michele',
+        lastonline: 'Ultimo accesso oggi alle 10/01/2020 10:52:03',
+        img: 'img/avatar_1.jpg',
+        messaggi: [
+          {
+            testo: "il mio messaggio",
+          },
+          {
+            testo: "messaggio del bot",
+          }
+        ] // fine array messaggi
+      }, // fine oggetto contatti
+      {
+        nome: 'Fabio',
+        lastonline: 'Ultimo accesso oggi alle 10/01/2020 11:11:14',
+        img: 'img/avatar_2.jpg',
+        messaggi: [
+          {
+            testo: "il mio messaggio",
+          },
+          {
+            testo: "messaggio del bot",
+          }
+        ] // fine array messaggi
+      }, // fine oggetto contatti
+      {
+        nome: 'Samuele',
+        lastonline: 'Ultimo accesso oggi alle 10/01/2020 15:24:43',
+        img: 'img/avatar_3.jpg',
+        messaggi: [
+          {
+            testo: "il mio messaggio",
+          },
+          {
+            testo: "messaggio del bot",
+          }
+        ] // fine array messaggi
+      }, // fine oggetto contatti
+      {
+        nome: 'Luisa',
+        lastonline: 'Ultimo accesso oggi alle 10/01/2020 18:45:52',
+        img: 'img/avatar_4.jpg',
+        messaggi: [
+          {
+            testo: "il mio messaggio",
+          },
+          {
+            testo: "messaggio del bot",
+          }
+        ] // fine array messaggi
+      } // fine oggetto contatti
+
+
+
+    ] // fine array contatti
+  }, // fine oggetto data
+   methods: {
+     cambiaChat: function(index) {
+       alert('prova')
+     }
+   }
 });

@@ -288,13 +288,20 @@ aside {
 
 /* BLOCCO DESTRA */
 /* container nav Michele */
-.micheleno {
+/* .micheleno {
   display: none;
 }
 
 .michelesi {
   display: block;
+  height: 100%;
 }
+
+.michelesi::after {
+  clear: both;
+  content: '',
+  display: table;
+} */
 
 .blocknavright1 {
   height: 100%;
