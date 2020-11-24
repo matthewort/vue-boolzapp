@@ -32,7 +32,7 @@ var app = new Vue({
     contatti: [
       {
         nome: 'Michele',
-        lastonline: 'Ultimo accesso oggi alle 10/01/2020 10:52:03',
+        lastonline: '10/01/2020 10:52:03',
         img: 'img/avatar_1.jpg',
         messaggi: [
           {
@@ -45,7 +45,7 @@ var app = new Vue({
       }, // fine oggetto contatti
       {
         nome: 'Fabio',
-        lastonline: 'Ultimo accesso oggi alle 10/01/2020 11:11:14',
+        lastonline: '10/01/2020 11:11:14',
         img: 'img/avatar_2.jpg',
         messaggi: [
           {
@@ -58,7 +58,7 @@ var app = new Vue({
       }, // fine oggetto contatti
       {
         nome: 'Samuele',
-        lastonline: 'Ultimo accesso oggi alle 10/01/2020 15:24:43',
+        lastonline: '10/01/2020 15:24:43',
         img: 'img/avatar_3.jpg',
         messaggi: [
           {
@@ -71,7 +71,7 @@ var app = new Vue({
       }, // fine oggetto contatti
       {
         nome: 'Luisa',
-        lastonline: 'Ultimo accesso oggi alle 10/01/2020 18:45:52',
+        lastonline: '10/01/2020 18:45:52',
         img: 'img/avatar_4.jpg',
         messaggi: [
           {

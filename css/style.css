@@ -149,17 +149,37 @@ body {
   font-size: 20px;
 }
 
-.contact1:hover {
-  background-color: lightgrey;
+/* lista contatti */
+.contacts {
+ /* non ho ancora capito il perché del 100% */
 }
-.contact2:hover {
-  background-color: lightgrey;
+
+.contacts::after {
+  clear: both;
+  content: '',
+  display: table;
 }
-.contact3:hover {
-  background-color: lightgrey;
+
+.contacts ul li{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  list-style: none;
+  position: relative;
+  height: 90px;
 }
-.contact4:hover {
-  background-color: lightgrey;
+
+li:hover {
+  background-color: #F5F5F5;
+}
+
+.time{
+  right:12px;
+  top:3px;
+  font-size: 9px;
+  color:#919191;
+  position: absolute;
 }
 
 /* contatto "Michele" */
@@ -302,6 +322,8 @@ aside {
   content: '',
   display: table;
 } */
+
+
 
 .blocknavright1 {
   height: 100%;
