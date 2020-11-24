@@ -105,34 +105,11 @@
 
             <!-- chat dell'utente -->
             <div class="userchat">
-
-              <div class="chat1">
-                <div class="contentchat1">
-
-                </div>
-              </div>
-
-              <div class="chat2">
-                <div class="contentchat2">
-
-                </div>
-              </div>
-
-              <div class="chat3">
-                <div class="contentchat3">
-                </div>
-              </div>
-
-              <div class="chat4">
-                <div class="contentchat4">
-                </div>
-              </div>
-
-              <div class="chat5">
-                <div class="contentchat5">
-                </div>
-              </div>
-
+              <div v-for="(nuvola ,index) in contatti[chatindex].messaggi" :class ="nuvola.stato">
+            <p>{{nuvola.testo}}
+              <span class="chatdata">{{nuvola.datainfo}}</span>
+            </p>
+            </div>
             </div> <!-- chiusura userchat -->
 
           </div> <!-- chiusura subright1 -->
@@ -147,7 +124,7 @@
               <input id="write" placeholder="Scrivi un messaggio">
             </div>
             <div class="subcontentright3">
-              <i class="fas fa-microphone"></i>
+              <i class="fas fa-microphone" @click="cambiaChat"></i>
             </div>
           </div>
         </div> <!-- chiusura blocco destra -->

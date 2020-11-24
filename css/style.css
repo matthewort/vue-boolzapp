@@ -83,7 +83,7 @@ body {
   /* border: solid 2px orange; */
   float: left;
   font-size: 30px;
-  color: grey;
+  color: #C8C8C8;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -284,10 +284,75 @@ img {
 .subright1 {
   height: 80%;
   width: 100%;
-  /* background-color: #00BFFF; */
   background-image: url('../img/mine.jpg');
-  /* border: solid 2px black; */
 }
+
+.chatdata{
+  position:absolute;
+  bottom:3px;
+  right:5px;
+  font-size: 9px;
+  color:#919191;
+}
+
+/* classi messaggi inviati e ricevuti */
+
+.inviato{
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.ricevuto{
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ricevuto p , .inviato p{
+  min-width: 30%;
+  max-width:80%;
+  padding:10px 10px 20px 10px;
+  border-radius: 10px;
+  margin:10px;
+}
+
+.ricevuto p {
+  background-color: #fff;
+  position: relative;
+}
+
+.inviato p{
+  position: relative;
+  background-color: #dcf8c6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ricevuto p::before{
+  content:'';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  bottom: 15px;
+  left: -5px;
+  transform: rotate(45deg);
+}
+
+.inviato p::before{
+  content:'';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background:#dcf8c6;
+  bottom: 15px;
+  right:-5px ;
+  transform: rotate(45deg);
+}
+
+/* fine classi inviati e ricevuti */
+
 
 .subright2 {
   height: 10%;
@@ -364,6 +429,7 @@ aside {
   justify-content: space-around;
   align-items: center;
   font-size: 30px;
+  color: #C8C8C8;
 }
 
 /* CHAT1 */

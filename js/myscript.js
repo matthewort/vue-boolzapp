@@ -13,22 +13,38 @@
 //
 // Datejene
 
-// var app = new Vue({
-//   el:'#app',
-//   data: {
-//     mieClassi: 'micheleno'
-//   },
-//   methods: {
-//     miafunzione() {
-//       this.mieClassi = 'michelesi'
-//     }
-//   }
-// });
+// Per oggi saremo sulla milestone3, inserimento msg in chat e relativa risposta:
+//
+//     l’utente può scrivere nel campo di input in basso;
+//     al click sull’invio succedono 2 cose: 1. il mio msg viene inviato alla chat relativa; 2. ottengo un msg di risposta automatico;
+//     il msg di risposta non è istantaneo, ma viene dopo 1 secondo;
+//     chiaramente tutto ciò viene agganciato/creato solo nella chat dove stò chattando;
+//     quindi ogni chat avrà i proprio messaggi.
+//
+// idee per possibili BONUS:
+//
+//     la funzionalità di questo milestone funziona sia al click sull’elemento di invio in pagina, sia dal tasto “invio” della tastiera;
+//     metto data e ora reali;
+//     scrollo la chat per far vedere i nuovi msg;
+//     etc..;
+//
+// NOTE
+//
+//     ricordatevi che ciò che rimane sempre il fulcro di tutto è la struttura dati;
+//     quindi prima di andare avanti, se qualcosa non vi torna, aggiustatela e sistematela per renderla lineare e più possibile utilizzabile con semplicità;
+//     vi carico adesso anche quello che abbiam visto insieme sul solito repo mio.
+//
+// Buon coding
+
 
 var app = new Vue({
   el:'#app',
   data: {
     chatindex: 0, // perché scriviamo questo?
+    typetext: '', //spazio per l'input
+    chatnuova: [  //creo l'array degli elementi che compariranno sotto
+
+    ],
     contatti: [
       {
         nome: 'Michele',
@@ -36,10 +52,16 @@ var app = new Vue({
         img: 'img/avatar_1.jpg',
         messaggi: [
           {
-            testo: "il mio messaggio",
+            testo: "Hey, stasera cinema?", stato:"inviato", datainfo:'10/01/2020 15:52:03',
           },
           {
-            testo: "messaggio del bot",
+            testo: "Ok, per che ora?", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "Facciamo per le 21:00?", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "Ok allora", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
           }
         ] // fine array messaggi
       }, // fine oggetto contatti
@@ -49,10 +71,19 @@ var app = new Vue({
         img: 'img/avatar_2.jpg',
         messaggi: [
           {
-            testo: "il mio messaggio",
+            testo: "Hey come va?", stato:"inviato", datainfo:'10/01/2020 15:52:03',
           },
           {
-            testo: "messaggio del bot",
+            testo: "Sto portando fuori il cane", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "Salutamelo", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "No", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "Rude", stato:"inviato", datainfo:'10/01/2020 15:52:03',
           }
         ] // fine array messaggi
       }, // fine oggetto contatti
@@ -62,10 +93,19 @@ var app = new Vue({
         img: 'img/avatar_3.jpg',
         messaggi: [
           {
-            testo: "il mio messaggio",
+            testo: "Mi sto leggendo un libro molto interessante", stato:"inviato", datainfo:'10/01/2020 15:52:03',
           },
           {
-            testo: "messaggio del bot",
+            testo: "Ah sì? Che libro?", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "Un libro", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "Eh", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+          },
+          {
+            testo: "Molto interessante", stato:"inviato", datainfo:'10/01/2020 15:52:03',
           }
         ] // fine array messaggi
       }, // fine oggetto contatti
@@ -75,20 +115,17 @@ var app = new Vue({
         img: 'img/avatar_4.jpg',
         messaggi: [
           {
-            testo: "il mio messaggio",
+            testo: "Hey", stato:"inviato", datainfo:'10/01/2020 15:52:03',
           },
           {
-            testo: "messaggio del bot",
+            testo: "Sì", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
           }
         ] // fine array messaggi
       } // fine oggetto contatti
-
-
-
     ] // fine array contatti
   }, // fine oggetto data
    methods: {
-     cambiaChat: function(index) {
+     cambiaChat: function() {
        alert('prova')
      }
    }
