@@ -41,10 +41,6 @@ var app = new Vue({
   el:'#app',
   data: {
     chatindex: 0, // perché scriviamo questo?
-    typetext: '', //spazio per l'input
-    chatnuova: [  //creo l'array degli elementi che compariranno sotto
-
-    ],
     contatti: [
       {
         nome: 'Michele',
@@ -122,11 +118,22 @@ var app = new Vue({
           }
         ] // fine array messaggi
       } // fine oggetto contatti
-    ] // fine array contatti
+    ], // fine array contatti
+    typetext: '', //spazio per l'input
+    chatnuova: [  //creo l'array degli elementi che compariranno sotto
+      {
+        testo2: "", stato2:"ricevuto", datainfo2:'10/01/2020 15:52:03',
+      }
+    ],
   }, // fine oggetto data
    methods: {
-     cambiaChat: function() {
-       alert('prova')
-     }
-   }
+    storeText() {
+      if (this.typetext === '') { //faccio in modo che non venga inserita una nuvoletta vuota se clicco senza scrivere nulla nell'input
+        this.typetext = ''
+      } else {
+      this.chatnuova.push(this.typetext)  //faccio in modo che quando qualcuno scrive qualcosa nell'input venga poi pushato nell'array chatnuova
+      this.typetext = ''  //faccio in modo che una volta scritta la parola nell'input e poi cliccata, venga poi rimossa dalla barra di input
+      }
+    }
+  }
 });

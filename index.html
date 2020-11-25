@@ -62,7 +62,7 @@
           <!-- lista contatti -->
           <div class="contacts">
             <ul>
-              <li v-for ="(contatto,index) in contatti" @click='chatindex = index'>
+              <li v-for ="(contatto, index) in contatti" @click='chatindex = index'>
               <img :src="contatto.img" alt="">
               <div class="">{{contatto.nome}}</div>
               <div class="time">{{contatto.lastonline}}</div>
@@ -105,11 +105,18 @@
 
             <!-- chat dell'utente -->
             <div class="userchat">
-              <div v-for="(nuvola ,index) in contatti[chatindex].messaggi" :class ="nuvola.stato">
-            <p>{{nuvola.testo}}
-              <span class="chatdata">{{nuvola.datainfo}}</span>
-            </p>
-            </div>
+                  <div v-for="(nuvola, index) in contatti[chatindex].messaggi" :class ="nuvola.stato">
+                <p>{{nuvola.testo}}
+                  <span class="chatdata">{{nuvola.datainfo}}</span>
+                </p>
+              </div> <!-- chiusura primo v-for -->
+
+                  <div v-for="(nuvola2, index) in chatnuova" :class ="nuvola2.stato2">
+                <p>{{nuvola2.testo2}}
+                  <span class="chatdata">{{nuvola2.datainfo2}}</span>
+                </p>
+              </div> <!-- chiusura secondo v-for -->
+
             </div> <!-- chiusura userchat -->
 
           </div> <!-- chiusura subright1 -->
@@ -121,12 +128,14 @@
               <i class="far fa-smile"></i>
             </div>
             <div class="subcontentright2">
-              <input id="write" placeholder="Scrivi un messaggio">
+              <input id="write" v-model="typetext" @keyup.enter="storeText" placeholder="Scrivi un messaggio">
             </div>
             <div class="subcontentright3">
-              <i class="fas fa-microphone" @click="cambiaChat"></i>
+              <i class="fas fa-microphone" @click="storeText"></i>
             </div>
           </div>
+
+
         </div> <!-- chiusura blocco destra -->
 
 
