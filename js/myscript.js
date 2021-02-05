@@ -36,104 +36,252 @@
 //
 // Buon coding
 
-
 var app = new Vue({
-  el:'#app',
+  el: "#app",
   data: {
+    answer: "",
+    searchInput: "",
+    textarea: "",
     chatindex: 0, // perché scriviamo questo?
     contatti: [
       {
-        nome: 'Michele',
-        lastonline: '10/01/2020 10:52:03',
-        img: 'img/avatar_1.jpg',
+        nome: "Michele",
+        lastonline: "10/01/2020 10:52:03",
+        img: "img/avatar_1.jpg",
+        display: true, //non ho capito il senso di lasciare il true
         messaggi: [
           {
-            testo: "Hey, stasera cinema?", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+            testo: "Hey, stasera cinema?",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Ok, per che ora?", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+            testo: "Ok, per che ora?",
+            stato: "ricevuto",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Facciamo per le 21:00?", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+            testo: "Facciamo per le 21:00?",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Ok allora", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
-          }
-        ] // fine array messaggi
+            testo: "Ok allora",
+            stato: "ricevuto",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
+          },
+        ], // fine array messaggi
       }, // fine oggetto contatti
       {
-        nome: 'Fabio',
-        lastonline: '10/01/2020 11:11:14',
-        img: 'img/avatar_2.jpg',
+        nome: "Fabio",
+        lastonline: "10/01/2020 11:11:14",
+        img: "img/avatar_2.jpg",
+        display: true,
         messaggi: [
           {
-            testo: "Hey come va?", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+            testo: "Hey come va?",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Sto portando fuori il cane", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+            testo: "Sto portando fuori il cane",
+            stato: "ricevuto",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Salutamelo", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+            testo: "Salutamelo",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "No", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+            testo: "No",
+            stato: "ricevuto",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Rude", stato:"inviato", datainfo:'10/01/2020 15:52:03',
-          }
-        ] // fine array messaggi
+            testo: "Rude",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
+          },
+        ], // fine array messaggi
       }, // fine oggetto contatti
       {
-        nome: 'Samuele',
-        lastonline: '10/01/2020 15:24:43',
-        img: 'img/avatar_3.jpg',
+        nome: "Samuele",
+        lastonline: "10/01/2020 15:24:43",
+        img: "img/avatar_3.jpg",
+        display: true,
         messaggi: [
           {
-            testo: "Mi sto leggendo un libro molto interessante", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+            testo: "Mi sto leggendo un libro molto interessante",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Ah sì? Che libro?", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+            testo: "Ah sì? Che libro?",
+            stato: "ricevuto",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Un libro", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+            testo: "Un libro",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Eh", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
+            testo: "Eh",
+            stato: "ricevuto",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Molto interessante", stato:"inviato", datainfo:'10/01/2020 15:52:03',
-          }
-        ] // fine array messaggi
+            testo: "Molto interessante",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
+          },
+        ], // fine array messaggi
       }, // fine oggetto contatti
       {
-        nome: 'Luisa',
-        lastonline: '10/01/2020 18:45:52',
-        img: 'img/avatar_4.jpg',
+        nome: "Luisa",
+        lastonline: "10/01/2020 18:45:52",
+        img: "img/avatar_4.jpg",
+        display: true,
         messaggi: [
           {
-            testo: "Hey", stato:"inviato", datainfo:'10/01/2020 15:52:03',
+            testo: "Hey",
+            stato: "inviato",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
           },
           {
-            testo: "Sì", stato:"ricevuto", datainfo:'10/01/2020 15:52:03',
-          }
-        ] // fine array messaggi
-      } // fine oggetto contatti
+            testo: "Sì",
+            stato: "ricevuto",
+            datainfo: "10/01/2020 15:52:03",
+            dropdown: false,
+          },
+        ], // fine array messaggi
+      }, // fine oggetto contatti
     ], // fine array contatti
-    typetext: '', //spazio per l'input
-    chatnuova: [  //creo l'array degli elementi che compariranno sotto
+    typetext: "", //spazio per l'input
+    chatnuova: [
+      //creo l'array degli elementi che compariranno sotto
       {
-        testo2: "", stato2:"ricevuto", datainfo2:'10/01/2020 15:52:03',
-      }
+        testo2: "",
+        stato2: "ricevuto",
+        datainfo2: "10/01/2020 15:52:03",
+      },
     ],
   }, // fine oggetto data
-   methods: {
-    storeText() {
-      if (this.typetext === '') { //faccio in modo che non venga inserita una nuvoletta vuota se clicco senza scrivere nulla nell'input
-        this.typetext = ''
-      } else {
-      this.chatnuova.push(this.typetext)  //faccio in modo che quando qualcuno scrive qualcosa nell'input venga poi pushato nell'array chatnuova
-      this.typetext = ''  //faccio in modo che una volta scritta la parola nell'input e poi cliccata, venga poi rimossa dalla barra di input
+  methods: {
+    //FUNZIONE CHE RITORNA PREVIEW DELL'ULTIMO MESSAGGIO MANDATO
+    textPreview(i) {
+      let index = this.contatti[i].messaggi.length - 1;
+      let text = this.contatti[i].messaggi[index].testo;
+      let preview = text.substring(0, 10) + "...";
+      return preview;
+    },
+    //CERCO IL CONTATTO NELLA BARRA IN ALTO A SINISTRA
+    searchContact() {
+      this.contatti.forEach((item) => {
+        if (item.nome.toLowerCase().includes(this.searchInput.toLowerCase())) {
+          item.display = true;
+        } else {
+          item.display = false;
+        }
+      });
+    },
+    //SEND MESSAGE
+    addMessage() {
+      if (this.typetext !== "") {
+        this.messageSentSound();
+        let newmessage = {
+          testo: this.typetext,
+          stato: "inviato",
+          datainfo: this.getDate(),
+          dropdown: false,
+        };
+        this.contatti[this.chatindex].lastonline = "online";
+        this.contatti[this.chatindex].messaggi.push(newmessage);
+        this.typetext = "";
+        this.scrollDown();
       }
-    }
-  }
+    },
+    //FUNZIONE CHE RIPORTA DATA E ORA CORRENTI
+    getDate() {
+      let x = new Date();
+      let hours = x.getHours().toString();
+      if (hours.length === 1) hours = "0" + hours;
+      let minutes = x.getMinutes().toString();
+      if (minutes.length === 1) minutes = "0" + minutes;
+      let seconds = x.getSeconds().toString();
+      if (seconds.length === 1) seconds = "0" + seconds;
+      let datatext =
+        x.getMonth() +
+        1 +
+        "/" +
+        x.getDate() +
+        "/" +
+        x.getFullYear() +
+        "  " +
+        hours +
+        ":" +
+        minutes +
+        ":" +
+        seconds;
+      return datatext; //funzione di questo return?
+    },
+    //SCROLLDOWN
+    scrollDown() {
+      setTimeout(() => {
+        var container = document.querySelector(".subright1");
+        container.scrollTop = container.scrollHeight;
+      }, 5);
+    },
+    //ANSWER MESSAGE
+    getAnswer() {
+      this.contatti[this.chatindex].messaggi.push({
+        testo: "No dai.",
+        stato: "ricevuto",
+        datainfo: this.getDate(),
+        dropdown: false,
+      });
+      this.scrollDown();
+      this.messageReceivedSound();
+    },
+    //SET TIMEOUT PER RISPOSTA
+    delayAnswer: function () {
+      setTimeout(this.getAnswer, 1000);
+    },
+    // SOUNDS
+    messageSentSound() {
+      var audio = new Audio("assets/message_sent.mp3");
+      audio.volume = 0.1;
+      audio.play();
+    },
+    messageReceivedSound() {
+      var audio = new Audio("assets/incoming.mp3");
+      audio.volume = 0.1;
+      audio.play();
+    },
+    storeText() {
+      if (this.typetext !== "") {
+        //faccio in modo che non venga inserita una nuvoletta vuota se clicco senza scrivere nulla nell'input
+        this.typetext = "";
+      } else {
+        this.chatnuova.push(this.typetext); //faccio in modo che quando qualcuno scrive qualcosa nell'input venga poi pushato nell'array chatnuova
+        this.typetext = ""; //faccio in modo che una volta scritta la parola nell'input e poi cliccata, venga poi rimossa dalla barra di input
+      }
+    },
+  },
 });

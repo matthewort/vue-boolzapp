@@ -1,152 +1,176 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   </head>
+
   <body>
+    <div id="app">
+      <!-- sfondo -->
+      <div class="sfondo">
+        <!-- container riquadro -->
+        <div class="squarecontainer">
+          <!-- riquadro bianco -->
+          <div class="square">
+            <!-- BLOCCO SINISTRA -->
+            <div class="blockleft">
+              <!-- nome utente -->
+              <div class="navleft">
+                <div class="blocknavleft1">
+                  <img src="img/avatar_io.jpg" alt="" />
+                </div>
+                <div class="blocknavleft2">
+                  <div class="user">Nome Utente</div>
+                </div>
+                <div class="blocknavleft3">
+                  <i class="fas fa-circle-notch"></i>
+                  <i class="fas fa-comment-alt"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </div>
+              </div>
 
-  <div id="app">
+              <!-- notifiche -->
+              <div class="subleft1">
+                <div class="blocknotifiche1">
+                  <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="blocknotifiche2">
+                  <div class="notifiche">
+                    Ricevi notifiche di nuovi messaggi
+                  </div>
+                  <div class="desktop">Attiva notifiche desktop</div>
+                </div>
+              </div>
 
-    <!-- sfondo -->
-    <div class="sfondo">
+              <!-- SEARCHBAR SX input -->
+              <div class="subleft2">
+                <input
+                  type="text"
+                  name="search"
+                  v-model="searchInput"
+                  @keyup="searchContact()"
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+              </div>
 
-    <!-- container riquadro -->
-    <div class="squarecontainer">
-      <!-- riquadro bianco -->
-      <div class="square">
-
-        <!-- BLOCCO SINISTRA -->
-        <div class="blockleft">
-
-          <!-- nome utente -->
-          <div class="navleft">
-            <div class="blocknavleft1">
-              <img src="img/avatar_io.jpg" alt="">
+              <!-- LISTA CONTATTI A SINISTRA -->
+              <div class="contacts">
+                <ul>
+                  <li
+                    :class="{activecontact: index===chatindex}"
+                    v-for="(contatto, index) in contatti"
+                    v-show="contatto.display"
+                    @click="chatindex = index ; scrollDown()"
+                  >
+                    <!-- con :class="{activecontact: index===chatindex}" faccio in modo che il grigio resti sull'ultimo contatto cliccato -->
+                    <!-- con v-show="contatto.display" faccio in modo che il contatto sia true -->
+                    <img :src="contatto.img" alt="" />
+                    <div>{{contatto.nome}}</div>
+                    <div
+                      class="textpreview"
+                      v-if="contatto.messaggi.length >= 1 "
+                    >
+                      {{textPreview(index)}}
+                    </div>
+                    <!-- non ho capito o non ricordo il perché dell'(index) -->
+                    <div class="time">{{contatto.lastonline}}</div>
+                  </li>
+                </ul>
+              </div>
+              <!-- chiusura contacts -->
             </div>
-            <div class="blocknavleft2">
-              <div class="user">
-                Nome Utente
+            <!-- chiusura blocco sinistra -->
+
+            <!-- BLOCCO DESTRA -->
+            <div class="blockright">
+              <!-- nav di destra in cui appare in alto chi è stato selezionato -->
+              <div class="navright">
+                <!-- HEADER SOPRA -->
+                <div class="blocknavright1">
+                  <img :src="contatti[chatindex].img" alt="" />
+                </div>
+                <div class="blocknavright2">
+                  <div class="nomenav">
+                    <div class="">{{contatti[chatindex].nome}}</div>
+                  </div>
+                  <div class="log">
+                    <div class="">{{contatti[chatindex].lastonline}}</div>
+                  </div>
+                </div>
+                <div class="blocknavright3">
+                  <i class="fas fa-search"></i>
+                  <i class="fas fa-paperclip"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </div>
+                <!-- CHIUSURA HEADER -->
+              </div>
+              <!-- chiusura navright -->
+
+              <!-- INTERFACCIA CHAT -->
+              <div class="subright1">
+                <div
+                  v-for="(nuvola, index) in contatti[chatindex].messaggi"
+                  :class="nuvola.stato"
+                >
+                  <p>
+                    {{nuvola.testo}}
+                    <span class="chatdata">{{nuvola.datainfo}}</span>
+                  </p>
+                </div>
+                <!-- chiusura CHAT -->
+              </div>
+              <!-- chiusura subright1 -->
+
+              <!-- NAV IN BASSO -->
+              <!-- interfaccia input in basso -->
+              <div class="subright2">
+                <div class="subcontentright1">
+                  <i class="far fa-smile"></i>
+                </div>
+
+                <!-- INPUT SEARCH IN BASSO -->
+                <div class="subcontentright2">
+                  <input
+                    ref="newmessage"
+                    type="textarea"
+                    id="write"
+                    v-model="typetext"
+                    @keyup.enter="addMessage(); delayAnswer()"
+                    placeholder="Scrivi un messaggio"
+                  />
+                </div>
+                <div class="subcontentright3">
+                  <i
+                    class="fas fa-paper-plane"
+                    @click="addMessage(); delayAnswer()"
+                  ></i>
+                </div>
               </div>
             </div>
-            <div class="blocknavleft3">
-              <i class="fas fa-circle-notch"></i>
-              <i class="fas fa-comment-alt"></i>
-              <i class="fas fa-ellipsis-v"></i>
-            </div>
+            <!-- chiusura blocco destra -->
           </div>
+          <!-- chiusura riquadro bianco -->
+        </div>
+        <!-- chiusura container riquadro -->
+      </div>
+      <!-- chiusura sfondo -->
+    </div>
+    <!-- chiusura app -->
 
-          <!-- notifiche -->
-          <div class="subleft1">
-            <div class="blocknotifiche1">
-              <i class="fas fa-bell-slash"></i>
-            </div>
-            <div class="blocknotifiche2">
-              <div class="notifiche">
-                Ricevi notifiche di nuovi messaggi
-              </div>
-              <div class="desktop">
-                Attiva notifiche desktop
-              </div>
-            </div>
-          </div>
-
-          <!-- input -->
-          <div class="subleft2">
-            <input placeholder="Cerca o inizia una nuova chat">
-          </div>
-
-          <!-- lista contatti -->
-          <div class="contacts">
-            <ul>
-              <li v-for ="(contatto, index) in contatti" @click='chatindex = index'>
-              <img :src="contatto.img" alt="">
-              <div class="">{{contatto.nome}}</div>
-              <div class="time">{{contatto.lastonline}}</div>
-              </li>
-            </ul>
-          </div> <!-- chiusura contacts -->
-
-        </div> <!-- chiusura blocco sinistra -->
-
-        <!-- BLOCCO DESTRA -->
-        <div class="blockright">
-
-          <!-- nav di destra in cui appare in alto chi è stato selezionato -->
-          <div class="navright">
-
-            <!-- navbar/header -->
-            <div class="blocknavright1">
-              <img :src="contatti[chatindex].img" alt="">
-            </div>
-            <div class="blocknavright2">
-              <div class="nomenav">
-                <div class="">{{contatti[chatindex].nome}}</div>
-              </div>
-              <div class="log">
-                <div class="">{{contatti[chatindex].lastonline}}</div>
-              </div>
-            </div>
-            <div class="blocknavright3">
-              <i class="fas fa-search"></i>
-              <i class="fas fa-paperclip"></i>
-              <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <!-- chiusura nav di Luisa -->
-
-
-          </div> <!-- chiusura navright -->
-
-          <!-- interfaccia chat -->
-          <div class="subright1">
-
-            <!-- chat dell'utente -->
-            <div class="userchat">
-                  <div v-for="(nuvola, index) in contatti[chatindex].messaggi" :class ="nuvola.stato">
-                <p>{{nuvola.testo}}
-                  <span class="chatdata">{{nuvola.datainfo}}</span>
-                </p>
-              </div> <!-- chiusura primo v-for -->
-
-                  <div v-for="(nuvola2, index) in chatnuova" :class ="nuvola2.stato2">
-                <p>{{nuvola2.testo2}}
-                  <span class="chatdata">{{nuvola2.datainfo2}}</span>
-                </p>
-              </div> <!-- chiusura secondo v-for -->
-
-            </div> <!-- chiusura userchat -->
-
-          </div> <!-- chiusura subright1 -->
-
-          <!-- NAV IN BASSO -->
-          <!-- interfaccia input in basso -->
-          <div class="subright2">
-            <div class="subcontentright1">
-              <i class="far fa-smile"></i>
-            </div>
-            <div class="subcontentright2">
-              <input id="write" v-model="typetext" @keyup.enter="storeText" placeholder="Scrivi un messaggio">
-            </div>
-            <div class="subcontentright3">
-              <i class="fas fa-microphone" @click="storeText"></i>
-            </div>
-          </div>
-
-
-        </div> <!-- chiusura blocco destra -->
-
-
-      </div> <!-- chiusura riquadro bianco -->
-    </div> <!-- chiusura container riquadro -->
-
-  </div> <!-- chiusura sfondo -->
-</div> <!-- chiusura app -->
-
-
-
-  <script src="js/myscript.js"></script>
+    <script src="js/myscript.js"></script>
   </body>
 </html>

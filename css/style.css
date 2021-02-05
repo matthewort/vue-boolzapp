@@ -170,8 +170,22 @@ body {
   height: 90px;
 }
 
+.textpreview {
+  position: absolute;
+  bottom: 3px;
+  font-size: 12px;
+  left: 65px;
+  color: #919191;
+  padding-bottom: 12px;
+  padding-left: 5px;
+}
+
 li:hover {
   background-color: #F5F5F5;
+}
+
+.activecontact {
+  background-color: #ededed;
 }
 
 .time{
@@ -282,6 +296,7 @@ img {
 }
 
 .subright1 {
+  overflow: auto;
   height: 80%;
   width: 100%;
   background-image: url('../img/mine.jpg');
@@ -589,4 +604,9 @@ aside {
   border-radius: 2px;
   font-size: 20px;
   padding-left: 2%;
+}
+
+i {
+  color: #919191;
+  cursor: pointer;
 }
